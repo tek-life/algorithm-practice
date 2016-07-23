@@ -6,7 +6,7 @@ class Solution(object):
         :rtype: List[int]=+
         """
         left_result,right_result=-1,-1
-        l,r=0,len(nums)
+        l,r=0,len(nums)-1
         
         #mid=(l+r)/2
         #print "---"
@@ -14,7 +14,7 @@ class Solution(object):
         if Just l < r, will not locate the lth number.
         For finding the lowest and highest limit, it is true. Because there may be one number for the subarry.
         """
-        while l<= r and l < len(nums):
+        while l<= r:# and l < len(nums):
             mid=(l+r)/2
             #print l,r,mid
             if nums[mid] < target:
@@ -27,9 +27,9 @@ class Solution(object):
             if nums[mid] > target:
                 r=mid-1
 
-        l,r=0,len(nums)
+        l,r=0,len(nums)-1
         #mid=(l+r)/2
-        while l<= r and l < len(nums):
+        while l<= r:# and l < len(nums):
             mid=(l+r)/2
             if nums[mid] < target:
                 l=mid+1
