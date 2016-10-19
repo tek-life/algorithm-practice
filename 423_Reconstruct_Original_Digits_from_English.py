@@ -15,10 +15,9 @@ class Solution(object):
         
         for i,key in enumerate(keys):
             num=cnts[key]
-            for k in range(num):
-                result.append(digits[i])
+            result.append(num*str(digits[i]))
             for x in values[i]:
-                cnts-=collections.Counter({x:num})
+                cnts[x]-=num
                     
         result=sorted(result)
-        return "".join([str(x) for x in result])
+        return "".join(result)
